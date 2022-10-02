@@ -68,3 +68,4 @@ arr2.splice(3); //урежьте массив до 3 элементов с по�
 // или так console.log(arr2.length)=19 arr2.splice(3, arr2.length-3 )
 
 console.log(arr2)
+

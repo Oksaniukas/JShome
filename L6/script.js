@@ -35,17 +35,50 @@
 // Результат вызова функции запиши в переменную.
 // Переменную выведи в консоль )
 
-let x = 100;
-let y = 10;
+// let x = 100;
+// let y = 10;
 
-function abc(x, y) {
-   if (x < y) {
-      return x;
-   }
-   else {
-     return y;
-   } 
+// function abc(x, y) {
+//    if (x < y) {
+//       return x;
+//    }
+//    else {
+//      return y;
+//    } 
+// }
+
+// let result = abc(x, y);
+// console.log(result);
+
+///А теперь тоже самое только с тернарным оператором )))
+// let x = 100;
+// let y = 10;
+
+// let result = x < y ? x : y;
+
+// console.log(result);
+
+
+///Задание 3
+
+// 1.Создать массив разных примитивов
+//  2. Пройтись по массиву циклом for
+//  3. Напишите функцию которая будет принимать 1 параметр, и выводить в консоль Тип этого параметра, 
+//  так же будет записывать в пустой массив этот параметр если он положительный. Эту функцию используйте в теле цикла.
+//  4. После выполнения цикла выведите в консоль количество положительных элементов в созданном массиве
+
+let arr1 = [44, 'hello', 888, true, 77, false, 'apple', 111, 54, false];
+let arr2 = [];
+
+for (let i = 0; i < arr1.length; i++) {
+  console.log(arr1[i]);
+  console.log(typeof arr1[i]);
+
+  if (arr1[i]) {
+    arr2.push(arr1[i]);
+  }
 }
 
-let result = abc(x, y);
-console.log(result);
+console.log(arr2);
+console.log(arr2.length)
+
