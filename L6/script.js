@@ -67,18 +67,68 @@
 //  так же будет записывать в пустой массив этот параметр если он положительный. Эту функцию используйте в теле цикла.
 //  4. После выполнения цикла выведите в консоль количество положительных элементов в созданном массиве
 
-let arr1 = [44, 'hello', 888, true, 77, false, 'apple', 111, 54, false];
-let arr2 = [];
+// let arr1 = [44, 'hello', 888, true, 77, false, 'apple', 111, 54, false];
+// let arr2 = [];
 
-for (let i = 0; i < arr1.length; i++) {
-  console.log(arr1[i]);
-  console.log(typeof arr1[i]);
+// function abc(x) {
+//   console.log(typeof x);
+//   if(x) {
+//     arr2.push(x)
+//   }
+// }
 
-  if (arr1[i]) {
-    arr2.push(arr1[i]);
+// for (let i = 0; i < arr1.length; i++) {
+//   abc(arr1[i]);
+// }
+
+// console.log(arr2.length);
+
+
+// 0. Те у кого длина имени и фамилии вместе больше 12 символов -  имеют больший шанс на то что бы удачно жениться.
+// 1. Создайте переменную с пустым массивом. Назовите potetnial.
+// 2. Создайте массив, в нём создайте 10 обьектов. У этих обьектов будет 2 поля- name и lastName. 
+// Имена и фамилии задайте произвольно. На своё усмотрение. Но разные. Длинные и которткие.
+// 3. Напишите функуию которая в будущем будет вызываться при каждой итерации циклом по массиву с обьектами людей.
+//  Пока что функцию оставьте пустой.
+// 4. Создаём цикл которым пройдёмся по массиву с обьектами.
+// 5. Первым делом к каждому полученому обьекту мы добавим новое поле "meryMe" и присвоим ему нашу ранее созданную функцию.
+// 6. Вернёмся к функции. Теперь когда мы присвоили нашу функции каждому из обьектов в массиве, мы понимаем область видимости, 
+// контекст нашей функции. Внутри функции создадим переменную и в неё запишем сложение длин имени и фамилии.
+//  К 'name' 'lastname' обращаемся через ключевое слово this.
+// Возвращаем с помощью return проверку если наша переменная больше 12.
+// 7. Вернёмся в массив. У нас уже есть строка кода которая присваивает каждому обьекту новое поле и его значением 
+// присваевает нашу функцию.
+// Дальше сделаем проверку через if() и в скобках запустим наш новый метод, который мы только что присвоили. 
+// Что-то навроде if(arr[i].method()). 
+// Как мы помним - его результатом будет либо TRUE длинее 12 символов либо нет.
+// В случае TRUE запишите имя (name) в массив potetnial.
+// 8. В конце выведите potetnial в консоль что бы посмотреть счастливчиков
+
+let potential = [];
+let listOfPersons = [ 
+  {name: 'James', lastName: 'Macdonald'}, 
+  {name: 'David', lastName: 'Land'}, 
+  {name: 'Peter', lastName: 'Manchester'}, 
+  {name: 'Oliver', lastName: 'Johnson'}, 
+  {name: 'Lucas', lastName: 'Smith'}, 
+  {name: 'Henry', lastName: 'Williams'}, 
+  {name: 'John', lastName: 'Lee'}, 
+  {name: 'Jacob', lastName: 'Lopez'}, 
+  {name: 'Alexandr', lastName: 'Jackson'}, 
+  {name: 'Leo', lastName: 'Robinson'}
+];
+
+function getMarriedSoon() {
+  let result = this.name.length + this.lastName.length;
+  return result > 12
+}
+
+for (let i = 0; i < listOfPersons.length; i++) {
+  listOfPersons[i].marryMe = getMarriedSoon;
+  if (listOfPersons[i].marryMe()) {
+    potential.push(listOfPersons[i].name);
   }
 }
 
-console.log(arr2);
-console.log(arr2.length)
-
+console.log(potential)
+// console.log(listOfPersons)
