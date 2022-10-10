@@ -2,26 +2,26 @@
 
 // Напишите 2 цикла. Один будет считать от 10 до 0, другой от 0 до 10. Напишите с помощью FOR и с помощью WHILE. В конечном результате будет 4 цикла.
 
-// let condition = 10;
-// while (condition > 0) { 
-//    condition--;
-//    console.log(condition);
-// }
+let condition = 10;
+while (condition > 0) { 
+   condition--;
+   console.log(condition);
+}
 
-// let numb = 0;
-// while (numb < 10) { 
-//    numb++;
-//    console.log(numb);
-// }
+let numb = 0;
+while (numb < 10) { 
+   numb++;
+   console.log(numb);
+}
 
 
-// for (let a = 10; a >= 0; a--) {
-//    console.log(a);
-// }
+for (let a = 10; a >= 0; a--) {
+   console.log(a);
+}
 
-// for (let b = 0; b <= 10; b++) {
-//    console.log(b);
-// }
+for (let b = 0; b <= 10; b++) {
+   console.log(b);
+}
 
 
 // Создайте массив разных данных простых типов ( примитивов), не менее 15 элементов в массиве. 
