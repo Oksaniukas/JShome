@@ -54,6 +54,44 @@
 
 // timeCount();
 
+// let wrapper = document.querySelector ('.wrapper');
+
+// let inp1 = document.querySelector('.minute') ;
+// let inp2 = document.querySelector('.second');
+// let button = document.getElementsByTagName('button') [0];
+
+// inp1.value = 5 ;
+
+// inp2.value = 300 ;
+
+
+// function minCount() {
+//    let minuteStart = 5;
+//    setInterval (function(){
+//       minuteStart--;
+//       inp1.value = minuteStart;
+//       localStorage.setItem('minute', inp1.value);
+
+//    }, 60000);
+// };
+
+// function secCount() {
+//    let secondStart = 300;
+//    setInterval (function(){
+//       secondStart--;
+//       inp2.value = secondStart;
+//       localStorage.setItem('second', inp2.value);
+
+//    }, 1000);
+// };
+
+// button.addEventListener('click', function (){
+     
+//    minCount(); 
+//    secCount();
+// });
+   
+
 let wrapper = document.querySelector ('.wrapper');
 
 let inp1 = document.querySelector('.minute') ;
@@ -64,32 +102,39 @@ inp1.value = 5 ;
 
 inp2.value = 300 ;
 
-
 function minCount() {
-   let minuteStart = 5;
-   setInterval (function(){
+   let minuteStart = inp1.value;
+   let minuteCounter = setInterval (function(){
       minuteStart--;
       inp1.value = minuteStart;
       localStorage.setItem('minute', inp1.value);
-
+      if (+inp1.value == 0 ) {
+         clearInterval(minuteCounter)
+      }
    }, 60000);
 };
 
 function secCount() {
-   let secondStart = 300;
-   setInterval (function(){
-      secondStart--;
+   let secondStart = inp2.value;
+   if (inp2.value === '0' || '') {
+      secondStart = 0
+   }
+   let secundCounter = setInterval (function(){
       inp2.value = secondStart;
       localStorage.setItem('second', inp2.value);
-
+      if (+secondStart == 0) {
+         secondStart = 59
+         if (+inp1.value > 0) inp1.value -= inp1.value
+         clearInterval(secundCounter)
+      }
+      secondStart--;
    }, 1000);
+
 };
 
-button.addEventListener('click', function (){
+
+   button.addEventListener('click', function (){
      
    minCount(); 
    secCount();
 });
-   
-
-   
