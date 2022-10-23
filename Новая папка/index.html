@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="style.css">
+   <title>JavaScript</title>
+</head>
+
+<body>      
+      <input type="text" placeholder="поиск" id="search">
+      <style id="search-style"></style>
+      <ul class="contacts">
+        <li data-index="марьяивановаmar.ivanova@yandex.ru89270000000">
+          <div>Марья</div>
+          <div>Иванова</div>
+          <div>mar.ivanova@yandex.ru</div>
+          <div>89270000000</div>
+        <li data-index="иванпетровivan.petriv@mail.ru89031111111">
+          <div>Иван</div>
+          <div>Петров</div>
+          <div>ivan.petriv@mail.ru</div>
+          <div>89031111111</div>
+        <li data-index="фёдорсидоровsidorov@mail.ru8172222222">
+          <div>Фёдор</div>
+          <div>Сидоров</div>
+          <div>sidorov@mail.ru</div>
+          <div>8172222222</div>
+        <li data-index="людмиласнегирёваsnegir@gmail.com333-33-33">
+          <div>Людмила</div>
+          <div>Снегирёва</div>
+          <div>snegir@gmail.com</div>
+          <div>333-33-33</div>
+      </ul>
+      
+      <script>
+      var searchStyle = document.getElementById('search-style');
+      document.getElementById('search').addEventListener('input', function() {
+        if (!this.value) {
+          searchStyle.innerHTML = '';
+          return;
+        }
+        searchStyle.innerHTML = '.contacts li:not([data-index*="' + this.value.toLowerCase() + '"]) { display: none; }';
+      });
+      </script>
+
+</body>
+</html>

@@ -70,7 +70,7 @@
 // })
 
 /*****INPUT*************************************** */
-// let input = document.querySelector('.input');
+let input = document.querySelector('.input');
 
 // input.onfocus = function(event) {  /***объект событий) */
 //    console.log(event)
@@ -133,10 +133,10 @@
 
 
 /********** */
-// input.addEventListener('keypress', (e) => {
-//    console.log(e.keyCode);
-//    console.log(e.target.value);
-// })
+input.addEventListener('keypress', (e) => {
+   // console.log(e.keyCode);
+   console.log(e.target.value);
+})
 
 // input.onkeypress = (e) => {
 //    console.log(e.keyCode);
@@ -144,10 +144,10 @@
 // }
 
 
-// input.onkeypress = (e) => {
-//    console.log(e.keyCode);
-//    console.log(e.target.value);
-// }
+input.onkeypress = (e) => {
+   // console.log(e.keyCode);
+   console.log(e.target.value);
+}
 
 /******///*** */ */
 

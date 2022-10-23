@@ -121,9 +121,8 @@ function createCard(parent, cardObject) {
     parent.append(card) 
 }
 
-arrCard.forEach(function(card) {
-  createCard(cardList, card)
-});
+
+
 
 
 /************************************************************************************************************************ */
